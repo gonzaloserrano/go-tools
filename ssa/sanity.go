@@ -410,7 +410,7 @@ func (s *sanity) checkFunction(fn *Function) bool {
 		s.errorf("nil Prog")
 	}
 
-	fn.String()            // must not crash
+	_ = fn.String()        // must not crash
 	fn.RelString(fn.pkg()) // must not crash
 
 	// All functions have a package, except delegates (which are
@@ -490,7 +490,7 @@ func sanityCheckPackage(pkg *Package) {
 	if pkg.Pkg == nil {
 		panic(fmt.Sprintf("Package %s has no Object", pkg))
 	}
-	pkg.String() // must not crash
+	_ = pkg.String() // must not crash
 
 	for name, mem := range pkg.Members {
 		if name != mem.Name() {
