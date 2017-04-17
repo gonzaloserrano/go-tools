@@ -265,11 +265,6 @@ func emitJump(f *Function, target *BasicBlock) {
 	f.currentBlock = nil
 }
 
-func (b *BasicBlock) emitJump(target *BasicBlock) {
-	b.emit(new(Jump))
-	addEdge(b, target)
-}
-
 // emitIf emits to f a conditional jump to tblock or fblock based on
 // cond, and updates the control-flow graph.
 // Postcondition: f.currentBlock is nil.

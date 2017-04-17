@@ -97,7 +97,6 @@ type Type struct {
 type NamedConst struct {
 	object *types.Const
 	Value  *Const
-	pos    token.Pos
 	pkg    *Package
 }
 
@@ -1517,7 +1516,7 @@ func (t *Type) Package() *Package                    { return t.pkg }
 func (t *Type) RelString(from *types.Package) string { return relString(t, from) }
 
 func (c *NamedConst) Name() string                         { return c.object.Name() }
-func (c *NamedConst) Pos() token.Pos                       { return c.object.Pos() }
+func (c *NamedConst) Pos() token.Pos                       { return token.NoPos }
 func (c *NamedConst) String() string                       { return c.RelString(nil) }
 func (c *NamedConst) Type() types.Type                     { return c.object.Type() }
 func (c *NamedConst) Token() token.Token                   { return token.CONST }
