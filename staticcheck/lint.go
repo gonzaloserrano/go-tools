@@ -2070,8 +2070,7 @@ func objectName(obj types.Object) string {
 	}
 	var name string
 	if obj.Pkg() != nil && obj.Pkg().Scope().Lookup(obj.Name()) == obj {
-		var s string
-		s = obj.Pkg().Path()
+		s := obj.Pkg().Path()
 		if s != "" {
 			name += s + "."
 		}
