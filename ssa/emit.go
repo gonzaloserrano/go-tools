@@ -129,8 +129,6 @@ func emitCompare(f *Function, op token.Token, x, y Value, pos token.Pos) Value {
 		x = emitConv(f, x, y.Type())
 	} else if _, ok := y.(*Const); ok {
 		y = emitConv(f, y, x.Type())
-	} else {
-		// other cases, e.g. channels.  No-op.
 	}
 
 	v := &BinOp{
