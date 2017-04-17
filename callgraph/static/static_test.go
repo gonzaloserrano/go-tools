@@ -11,9 +11,9 @@ import (
 	"sort"
 	"testing"
 
+	"golang.org/x/tools/go/loader"
 	"honnef.co/go/tools/callgraph"
 	"honnef.co/go/tools/callgraph/static"
-	"golang.org/x/tools/go/loader"
 	"honnef.co/go/tools/ssa/ssautil"
 )
 
